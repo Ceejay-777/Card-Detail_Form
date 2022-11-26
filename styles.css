@@ -1,0 +1,250 @@
+:root {
+    --linear-gradient : linear-gradient(hsl(249, 99%, 64%)), hsl(278, 94%, 30%);
+    --red : hsl(0, 100%, 66%);
+    --light-grayish-violet : hsl(270, 3%, 87%);
+    --dark-grayish-violet:  hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --space: 'Space Grotesk', sans-serif;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    /* width: 375px;
+    border-right: 1px solid black; */
+    margin-top: 0px auto;
+}
+
+.top {
+    width: 100%;
+    height: 240px;
+    background-image: url(./images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cards {
+    display: grid;
+    width: 92%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 15.7% auto;
+    grid-template-rows: 37.5% auto;
+    position: relative;
+    top: 30px;
+}
+
+.card {
+    width: 290px;
+    height: 164px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: var(--space);
+    border-radius: 7px;
+}
+
+.card-front {
+    background-image: url(./images/bg-card-front.png);
+    z-index: 3;
+    padding: 20px;
+    grid-row: 2/3;
+}
+
+.card-icon {
+    width: 50px;
+    margin-bottom: 25px;
+}
+
+.card-num {
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    font-weight: 500;
+}
+
+.card-name-date {
+    font-size: 9px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+.card-back {
+    background-image: url(./images/bg-card-back.png);
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.card-cvv {
+    top: -40px;
+    left: 50px;
+    transform: translate(230px, 72px);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.bottom {
+    width: 90%;
+    position: relative;
+    font-family: var(--space);
+    margin-top: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+}
+
+.front-face {
+    background-color: black;
+}
+
+label {
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+input {
+    height: 50px;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 7px;
+    font-family: var(--space);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--light-grayish-violet);
+    padding-left: 15px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+#user-name,#user-num {
+    width: 100%;
+}
+
+.bot-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content;
+    column-gap: 10px;
+}
+
+.user-date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+}
+
+.user-date input {
+    width: 100%;
+}
+
+#user-cvc {
+    width: 100%;
+}
+
+.confirm {
+    width: 100%;
+    height: 55px;
+    margin-top: 20px;
+    background-color: var(--very-dark-violet);
+    border: none;
+    border-radius: 7px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    font-family: var(--space);
+}
+
+.back-contents {
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.success {
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+.back-thanks {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--very-dark-violet);
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.back-info {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--dark-grayish-violet);
+    margin-bottom: 35px;
+}
+
+.continue {
+    width: 100%;
+    height: 55px;
+    margin-top: 20px;
+    background-color: var(--very-dark-violet);
+    border: none;
+    border-radius: 7px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: white;
+    font-family: var(--space);
+}
+
+.flip-card {
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    /* perspective: 10000px; */
+}
+
+.bottom {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    height: max-content;
+}
+
+.flip-card:hover .bottom {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.back-face {
+    transform: rotateY(180deg);
+}
+
+.attribution {
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+ 
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <div class="cards">
+
+        <div class="card-front card">
+          <img src="./images/card-logo.svg" alt="card-logo" class="card-icon">
+          <p class="card-num">0000 0000 0000 0000</p>
+          <div class="card-name-date">
+            <p class="card-name">Jane Appleseed</p>
+            <p class="card-date">00/00</p> 
+          </div> 
+        </div>
+
+        <div class="card-back card">
+          <p class="card-cvv">000</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="bottom">
+        <div class="front-face">
+          <form>
+            <p>
+              <label for="user-name">Cardholder Name</label> <br>
+              <input type="text" name="user-name" id="user-name" placeholder="e.g. Jane Appleseed">
+            </p>
+            
+            <p>
+              <label for="user-num">Card Number</label> <br>
+              <input type="text" name="user-num" id="user-num" placeholder="e.g. 1234 5678 9123 0000">
+            </p>
+
+            <div class="bot-grid">
+                <label for="user-exp-month">Exp. Date (MM/YY)</label>
+                <label for="user-cvc">CVC</label> 
+                <div class="user-date">
+                  <input type="text" name="user-exp" id="user-exp-month" class="user-exp-date" placeholder="MM">
+                  <input type="text" name="user-exp" id="user-exp-year" class="user-exp-date" placeholder="YY">
+                </div>
+                <input type="text" name="user-cvc" id="user-cvc" placeholder="e.g. 123">
+            </div>
+          
+            <button type="submit" class="confirm">Confirm</button>
+          </form>
+        </div>
+
+       <!-- Backface starts -->
+
+        <div class="back-face">
+          <div class="back-contents">
+            <img src="./images/icon-complete.svg" alt="success" class="success">
+            <p class="back-thanks">Thank You!</p> 
+            <p class="back-info">We've added your card details</p>  
+            <button class="continue">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
