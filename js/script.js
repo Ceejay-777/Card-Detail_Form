@@ -14,7 +14,7 @@ $('#main-form').validate({
             maxlength: 2,
             minlength: 2,
             number: true,
-            max: 31,
+            max: 12,
             min: 01,
         },
         userexpyear: {
@@ -65,7 +65,7 @@ $('#main-form').validate({
 });
 
 $.validator.addMethod("validCardNumber", function(value, element) {
-    return this.optional(element) || /[1-9]{4} [1-9]{4} [1-9]{4} [1-9]{4}/.test(value);
+    return this.optional(element) || /[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}/.test(value);
 }, 'Wrong format, please enter a valid card number');
 
 $.validator.addMethod('validName', function(value, element) {
@@ -76,21 +76,26 @@ $('#username').blur(function() {
     $('.card-name').text($(this).val());
 });
 
+$('#usernum').blur(function() {
+    $('.card-num').text($(this).val());
+})
+
+$('#userexpmonth').blur(function() {
+    $('.card-month').text($(this).val());
+})
+
+$('#userexpyear').blur(function() {
+    $('.card-year').text($(this).val());
+})
+
+$('#usercvc').blur(function() {
+    $('.card-cvc').text($(this).val());
+})
+
 $('.confirm').click(function() {
-    $('input').each(function() {
-        if (!$(this).valid()) {
-            $(this).css('outline', '1px solid var(--red)');
-        }
-    });
-
-    // if($('#main-form').submit()) {
-    //     $('.bottom').css('transform', 'rotateY(180deg)');
-    // }
-});
-
-$('input').blur(function() {
-    if(!$(this).valid()) {
-        $(this).css('outline', '1px solid var(--red)');
+    if ($('#main-form').valid()) {
+        $('.bottom').css('transform', 'rotateY(180deg)')
     }
-});
+})
 
+ 

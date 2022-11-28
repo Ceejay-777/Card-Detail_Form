@@ -86,7 +86,7 @@ body {
     grid-row: 1/2;
 }
 
-.card-cvv {
+.card-cvc {
     top: -40px;
     left: 50px;
     transform: translate(230px, 72px);
