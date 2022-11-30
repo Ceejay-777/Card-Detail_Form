@@ -78,24 +78,24 @@ $('#username').blur(function() {
 
 $('#usernum').blur(function() {
     $('.card-num').text($(this).val());
-})
+});
 
 $('#userexpmonth').blur(function() {
     $('.card-month').text($(this).val());
-})
+});
 
 $('#userexpyear').blur(function() {
     $('.card-year').text($(this).val());
-})
+});
 
 $('#usercvc').blur(function() {
     $('.card-cvc').text($(this).val());
-})
+});
 
 $('.confirm').click(function() {
     if ($('#main-form').valid()) {
         $('.bottom').css('transform', 'rotateY(180deg)')
     }
-})
+});
 
  
