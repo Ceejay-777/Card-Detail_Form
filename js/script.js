@@ -98,4 +98,8 @@ $('.confirm').click(function() {
     }
 });
 
+$('.continue').click(function() {
+    $('.bottom').css('transform', 'rotateY(360deg)');
+});
+
  
