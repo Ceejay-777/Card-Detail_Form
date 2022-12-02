@@ -1,4 +1,4 @@
-$('#main-form').validate({
+var validator = $('#main-form').validate({
     rules: {
         username: {
             required: true,
@@ -73,23 +73,33 @@ $.validator.addMethod('validName', function(value, element) {
 }, 'Please enter Firstname and Lastname');
 
 $('#username').blur(function() {
-    $('.card-name').text($(this).val());
+    if($(this).valid()){
+        $('.card-name').text($(this).val());
+    };
 });
 
 $('#usernum').blur(function() {
-    $('.card-num').text($(this).val());
+    if($(this).valid()){
+        $('.card-num').text($(this).val());
+    };
 });
 
 $('#userexpmonth').blur(function() {
-    $('.card-month').text($(this).val());
+    if($(this).valid()){
+        $('.card-month').text($(this).val());
+    };
 });
 
 $('#userexpyear').blur(function() {
-    $('.card-year').text($(this).val());
+    if($(this).valid()){
+        $('.card-year').text($(this).val());
+    };
 });
 
 $('#usercvc').blur(function() {
-    $('.card-cvc').text($(this).val());
+    if($(this).valid()){
+        $('.card-cvc').text($(this).val());
+    };
 });
 
 $('.confirm').click(function() {
@@ -100,6 +110,31 @@ $('.confirm').click(function() {
 
 $('.continue').click(function() {
     $('.bottom').css('transform', 'rotateY(360deg)');
+    validator.resetForm();
 });
 
- 
+// $('input').focus(function() {
+//     if($(this).valid()) {
+//         $(this).css('outline', '1px solid hsl(278, 94%, 30%)')
+//     } else {
+//         $(this).css('outline', '1px solid var(--red')
+//     }
+// });
+
+$('#usernum').on('keydown keyup change', function(e){
+    if ($(this).val().length > 18 && e.keyCode !== 46 && e.keyCode !== 8 ) {
+       e.preventDefault();
+    }
+});
+
+$('.userexpdate').on('keydown keyup change', function(e){
+    if ($(this).val().length > 1 && e.keyCode !== 46 && e.keyCode !== 8 ) {
+       e.preventDefault();
+    }
+});
+
+$('#usercvc').on('keydown keyup change', function(e){
+    if ($(this).val().length > 2 && e.keyCode !== 46 && e.keyCode !== 8 ) {
+       e.preventDefault();
+    }
+});
